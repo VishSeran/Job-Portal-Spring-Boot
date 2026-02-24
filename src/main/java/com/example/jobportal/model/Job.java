@@ -70,4 +70,15 @@ public class Job {
         this.numberOfViews = numberOfViews;
     }
 
+    public void addNumViews () {
+        numberOfViews ++;
+    }
+
+    public String toString () {
+        return this.id + " "+ this.title + "\n"+
+                this.description + "\n" + "Posted on " + this.postingDate + "\n" +
+                "Last access on " + this.lastAccessDate + "\n" +
+                "Total views " + this.numberOfViews;
+    }
+
 }

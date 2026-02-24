@@ -3,6 +3,7 @@ package com.example.jobportal.controller;
 import com.example.jobportal.model.Job;
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
@@ -34,5 +35,23 @@ public class JobController {
         jobList = new ArrayList<>();
         jobList.add(job1);
         jobList.add(job2);
+
+    }
+
+    @GetMapping("/jobs/search/{query}")
+    public ArrayList<Job> searchJobs(@PathVariable String query) {
+            ArrayList<Job> matchingJobs = new ArrayList<>();
+
+            for(Job job : jobList) {
+                if(
+                        job.getTitle().toLowerCase().contains(query.toLowerCase()) ||
+                                job.getDescription().toLowerCase().contains(query.toLowerCase())
+
+                ) {
+                    matchingJobs.add(job);
+                }
+            }
+
+            return matchingJobs;
     }
 }

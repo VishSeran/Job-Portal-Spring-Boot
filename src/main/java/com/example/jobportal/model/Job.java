@@ -21,10 +21,53 @@ public class Job {
         this.postingDate = postingDate;
         this.lastAccessDate = lastAccessDate;
         this. numberOfViews = numberOfViews;
-
-
     }
+
+    public String getId() {
+        return id;
+    }
+
     public String getTitle() {
         return title;
     }
+    public String getDescription () {
+        return description;
+    }
+
+    public LocalDate getPostingDate () {
+        return postingDate;
+    }
+
+    public LocalDateTime getLastAccessDate() {
+        return lastAccessDate;
+    }
+
+    public int getNumberOfViews() {
+        return numberOfViews;
+    }
+
+    public void setId (String id) {
+        this.id = id;
+    }
+
+    public void setTitle (String title) {
+        this.title = title;
+    }
+
+    public void setDescription (String description) {
+        this.description = description;
+    }
+
+    public void setPostingDate (LocalDate postingDate) {
+        this.postingDate = postingDate;
+    }
+
+    public void setLastAccessDate (LocalDateTime lastAccessDate) {
+        this.lastAccessDate = lastAccessDate;
+    }
+
+    public void setNumberOfViews (int numberOfViews) {
+        this.numberOfViews = numberOfViews;
+    }
+
 }
